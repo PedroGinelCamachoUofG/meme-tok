@@ -11,5 +11,13 @@ model likes {
   id         String   @id @default(dbgenerated("uuid_generate_v4()")) @db.Uuid
   created_at DateTime @default(now()) @db.Timestamptz(6)
   user_id    String
+  post_id     String
+}
+
+model post {
+  id         String   @id @default(dbgenerated("uuid_generate_v4()")) @db.Uuid
+  created_at DateTime @default(now()) @db.Timestamptz(6)
+  user_id    String
   gif_id     String
+  gif_url    String
 }
